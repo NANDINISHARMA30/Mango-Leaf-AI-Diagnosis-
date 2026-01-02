@@ -13,13 +13,8 @@ Plant diseases can significantly reduce crop yields if not detected early. Manua
 * Image upload and disease diagnosis
 * Trained using convolutional neural networks (CNN) or transfer-learning models
 * Multi-class classification for multiple mango leaf diseases
-* Live feedback with confidence scores
-* Web interface or API for integration
 
 ---
-
-## Getting Started
-
 ### Prerequisites
 
 Before running the project, ensure the following are installed:
@@ -28,77 +23,8 @@ Before running the project, ensure the following are installed:
 * pip (Python package manager)
 * Virtual environment (recommended)
 
----
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/Mango-Leaf-AI-Diagnosis.git
-cd Mango-Leaf-AI-Diagnosis
-```
-
-2. Create and activate a virtual environment (optional but recommended):
-
-**Windows:**
-
-```bash
-python -m venv venv
-.\venv\Scripts\activate
-```
-
-**Mac/Linux:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Install required packages:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### Running the Application
-
-#### Option A — Web Interface (Streamlit)
-
-If your project contains a Streamlit app:
-
-```bash
-streamlit run app.py
-```
-
-Open the browser at:
-
-```
-http://localhost:8501
-```
-
-#### Option B — API Backend
-
-If your project has a FastAPI or Flask backend:
-
-**FastAPI example:**
-
-```bash
-uvicorn main:app --reload
-```
-
-**Flask example:**
-
-```bash
-python main.py
-```
-
----
 
 ## Dataset
-
 The dataset contains mango leaf images labeled with their respective disease categories. The images should be organized by folder for each class such as:
 
 ```
@@ -109,55 +35,19 @@ The dataset contains mango leaf images labeled with their respective disease cat
     ├── Bacterial_Canker/
 ```
 
-You can use public datasets such as MangoLeafBD from Mendeley or custom collected leaf images. ([Mendeley Data][1])
-
----
 
 ## Model Training
 
 1. Load and preprocess images
 2. Split dataset into training and validation sets
-3. Load pretrained CNN (e.g., ResNet50, MobileNet)
+3. Load pretrained CNN Model (VGG16) -> Pretrained on ImageNet-> Uses small 3×3 filters ->Fine-tuned for mango leaf disease detection
 4. Train model
 5. Evaluate accuracy
-6. Save model weights for inference
-
----
-
-## Usage
-
-After starting the app or API:
-
-1. Upload a mango leaf image
-2. The system will display:
-
-   * Predicted class (e.g., Anthracnose)
-   * Confidence score
-3. View recommended actions or treatments (if implemented)
-
----
-
-## Project Structure
-
-```
-Mango-Leaf-AI-Diagnosis/
-├── dataset/                  # Images for training and testing
-├── app/                     # Frontend app (Streamlit/Flask)
-├── models/                  # Saved trained models
-├── notebooks/               # Training and EDA notebooks
-├── src/                     # Code for training and inference
-├── requirements.txt
-└── README.md
-```
-
 ---
 
 ## Results
-
 86% with VGG-16 Cnn 
-
 ---
-
 ## Contribution
 
 Contributions, issues, and feature requests are welcome.
