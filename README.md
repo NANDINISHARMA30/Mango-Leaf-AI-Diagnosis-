@@ -47,6 +47,7 @@ The dataset contains mango leaf images labeled with their respective disease cat
 
 ## Results
 86% with VGG-16 Cnn 
+91% with VGG-19
 ---
 ## Contribution
 
